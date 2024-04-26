@@ -1,5 +1,4 @@
 from django.urls import path
-from .views import PlantCreate
 from . import views
 
 urlpatterns = [

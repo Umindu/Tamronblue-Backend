@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'account',
     'plants',
+    'varieties',
 ]
 
 MIDDLEWARE = [
