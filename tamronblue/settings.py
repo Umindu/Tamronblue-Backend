@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'account',
     'plants',
     'varieties',
+    'branches',
+    'customers',
+    'lands',
+    'lands_plants',
+    'stocks',
 ]
 
 MIDDLEWARE = [
