@@ -11,4 +11,6 @@ urlpatterns = [
     path('api/', include('lands.urls')),
     path('api/', include('lands_plants.urls')),
     path('api/', include('stocks.urls')),
+    path('api/', include('grn.urls')),
+    path('api/', include('profiles.urls')),
 ]

@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'lands',
     'lands_plants',
     'stocks',
+    'grn',
+    'profiles',
 ]
 
 MIDDLEWARE = [
