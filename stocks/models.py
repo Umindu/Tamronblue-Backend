@@ -13,17 +13,3 @@ class Stock(models.Model):
 
     def __str__(self):
         return f'{self.plant_id} - {self.variety_id} - {self.quantity} - {self.price} - {self.date} - {self.description} - {self.created_at} - {self.updated_at}'
-
-class grn(models.Model):
-    plant_id = models.ForeignKey('plants.Plant', on_delete=models.CASCADE)
-    variety_id = models.ForeignKey('varieties.Variety', on_delete=models.CASCADE)
-    quantity = models.IntegerField()
-    cost = models.DecimalField(max_digits=10, decimal_places=2)
-    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
-    sub_total = models.DecimalField(max_digits=10, decimal_places=2)
-    tax = models.DecimalField(max_digits=10, decimal_places=2)
-    sub_total_tax = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateField()
-    description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
