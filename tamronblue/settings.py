@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'grn',
     'profiles',
     'salaries',
+    'orders',
 ]
 
 MIDDLEWARE = [
