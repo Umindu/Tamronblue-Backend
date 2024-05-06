@@ -3,37 +3,6 @@ from .models import GrnDetail, Grn
 from .permissions import IsAdmin, IsAdminOrIsAgent, IsAgent
 from .serializers import GrnSerializer, GrnDetailSerializer
 
-# Admin only
-# get all Grn
-class GrnList(generics.ListAPIView):
-    queryset = Grn.objects.all()
-    serializer_class = GrnSerializer
-    permission_classes = [IsAdmin]
-
-# get a specific Grn
-class GrnDetail(generics.RetrieveAPIView):
-    queryset = Grn.objects.all()
-    serializer_class = GrnSerializer
-    permission_classes = [IsAdmin]
-
-# save the Grn
-class GrnCreate(generics.CreateAPIView):
-    queryset = Grn.objects.all()
-    serializer_class = GrnSerializer
-    permission_classes = [IsAdmin]
-
-# update the Grn
-class GrnUpdate(generics.UpdateAPIView):
-    queryset = Grn.objects.all()
-    serializer_class = GrnSerializer
-    permission_classes = [IsAdmin]
-
-# delete the Grn
-class GrnDelete(generics.DestroyAPIView):
-    queryset = Grn.objects.all()
-    serializer_class = GrnSerializer
-    permission_classes = [IsAdmin]
-
 
 # Admin only
 # get all GrnDetail
@@ -65,6 +34,39 @@ class GrnDetailDelete(generics.DestroyAPIView):
     queryset = GrnDetail.objects.all()
     serializer_class = GrnDetailSerializer
     permission_classes = [IsAdmin]
+
+    
+# Admin only
+# get all Grn
+class GrnList(generics.ListAPIView):
+    queryset = Grn.objects.all()
+    serializer_class = GrnSerializer
+    permission_classes = [IsAdmin]
+
+# get a specific Grn
+class GrnDetail(generics.RetrieveAPIView):
+    queryset = Grn.objects.all()
+    serializer_class = GrnSerializer
+    permission_classes = [IsAdmin]
+
+# save the Grn
+class GrnCreate(generics.CreateAPIView):
+    queryset = Grn.objects.all()
+    serializer_class = GrnSerializer
+    permission_classes = [IsAdmin]
+
+# update the Grn
+class GrnUpdate(generics.UpdateAPIView):
+    queryset = Grn.objects.all()
+    serializer_class = GrnSerializer
+    permission_classes = [IsAdmin]
+
+# delete the Grn
+class GrnDelete(generics.DestroyAPIView):
+    queryset = Grn.objects.all()
+    serializer_class = GrnSerializer
+    permission_classes = [IsAdmin]
+
 
 
 
