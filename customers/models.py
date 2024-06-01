@@ -10,11 +10,11 @@ class Customer(models.Model):
     phone = models.CharField(max_length=10, default='')
     address = models.TextField(default='')
     city = models.CharField(max_length=255, default='')
-    counrty = models.CharField(max_length=255, default='')
+    country = models.CharField(max_length=255, default='')
     zip_code = models.CharField(max_length=10, default='')
     branch_id = models.ForeignKey('branches.Branch', on_delete=models.CASCADE, default=1)
     agent_id = models.ForeignKey('account.User', on_delete=models.CASCADE, default=1)
-    staus = models.BooleanField(default=True)
+    status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

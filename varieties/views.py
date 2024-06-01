@@ -15,6 +15,15 @@ class VarietyDetail(generics.RetrieveAPIView):
     serializer_class = VarietySerializer
     permission_classes = [permissions.IsAuthenticated]
 
+# get varieties by plant_id
+class VarietyByPlant(generics.ListAPIView):
+    serializer_class = VarietySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        plant_id = self.kwargs['plant_id']
+        return Variety.objects.filter(plant_id=plant_id)
+
 # Admin only
 # save the variety
 class VarietyCreate(generics.CreateAPIView):

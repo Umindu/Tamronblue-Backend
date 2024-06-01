@@ -9,6 +9,14 @@ class CustomerList(generics.ListAPIView):
     serializer_class = CustomerSerializer
     permission_classes = [IsAdminOrIsAgent]
 
+class CustomerListByAgent(generics.ListAPIView):
+    serializer_class = CustomerSerializer
+    permission_classes = [IsAdminOrIsAgent]
+
+    def get_queryset(self):
+        agent = self.request.user
+        return Customer.objects.filter(agent_id=agent.id)
+
 # get a specific Customer
 class CustomerDetail(generics.RetrieveAPIView):
     queryset = Customer.objects.all()

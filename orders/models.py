@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 class Order(models.Model):
     customer = models.ForeignKey('customers.Customer', on_delete=models.CASCADE, related_name='orders')
-    Agent = models.ForeignKey('account.User', on_delete=models.CASCADE, related_name='orders')
+    agent = models.ForeignKey('account.User', on_delete=models.CASCADE, related_name='orders')
     land = models.ForeignKey('lands.Land', on_delete=models.CASCADE, related_name='orders')
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2)
-    discount = models.DecimalField(max_digits=10, decimal_places=2)
-    total = models.DecimalField(max_digits=10, decimal_places=2)
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    discount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     paid = models.BooleanField(default=False)
     status = models.CharField(max_length=50, default='Pending')
     created = models.DateTimeField(auto_now_add=True)

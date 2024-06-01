@@ -56,7 +56,7 @@ class User(AbstractBaseUser):
     REQUIRED_FIELDS=['first_name','last_name', 'is_admin', 'is_agent']
 
     def __str__(self):
-        return self.email
+        return self.first_name + ' ' + self.last_name
 
     def get_full_name(self):
         return self.first_name

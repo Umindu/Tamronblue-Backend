@@ -19,6 +19,15 @@ class OrderDelete(generics.DestroyAPIView):
     permission_classes = [IsAdmin]
 
 # Admin and Agent only
+# get my all orders
+class OrderListByAgent(generics.ListAPIView):
+    serializer_class = OrderSerializer
+    permission_classes = [IsAdminOrIsAgent]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Order.objects.filter(agent=user)
+
 # get a specific order
 class OrderDetail(generics.RetrieveAPIView):
     queryset = Order.objects.all()

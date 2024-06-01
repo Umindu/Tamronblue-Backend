@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ib(a77tglp$6@q*apctc2#1s8novtz5vz&0wf7gb35ud5x_2&=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.170.129']
 
 
 # Application definition
@@ -178,6 +178,7 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
     'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
+    # 'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': True,
     # 'BLACKLIST_AFTER_ROTATION': True,
@@ -208,6 +209,11 @@ DJOSER = {
         'password_changed_confirmation': 'account.email.PasswordChangedConfirmationEmail',
     },
 }
+
+
+
+# CORS Configuration
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Django Rest Framework
 CORS_ALLOWED_ORIGINS = [

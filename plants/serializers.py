@@ -4,4 +4,4 @@ from .models import Plant
 class PlantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plant
-        fields = ['name', 'description', 'status', 'created_at', 'updated_at']
+        fields = '__all__'

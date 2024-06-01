@@ -15,6 +15,15 @@ class LandPlantDetail(generics.RetrieveAPIView):
     serializer_class = LandPlantSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+# get a specific Land and Plant by Land ID
+class LandPlantDetailByLand(generics.ListAPIView):
+    serializer_class = LandPlantSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        land_id = self.kwargs['land_id']
+        return LandPlant.objects.filter(land_id=land_id)
+
 # Admin only
 # save the Land and Plant
 class LandPlantCreate(generics.CreateAPIView):

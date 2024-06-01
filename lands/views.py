@@ -15,6 +15,24 @@ class LandDetail(generics.RetrieveAPIView):
     serializer_class = LandSerializer
     permission_classes = [IsAdminOrIsAgent]
 
+# land get by customer id
+class LandByCustomer(generics.ListAPIView):
+    serializer_class = LandSerializer
+    permission_classes = [IsAdminOrIsAgent]
+
+    def get_queryset(self):
+        customer_id = self.kwargs['customer_id']
+        return Land.objects.filter(customer_id=customer_id)
+    
+# land get by agent id
+class LandListByAgent(generics.ListAPIView):
+    serializer_class = LandSerializer
+    permission_classes = [IsAdminOrIsAgent]
+
+    def get_queryset(self):
+        agent_id = self.request.user
+        return Land.objects.filter(agent_id=agent_id)
+
 # save the land
 class LandCreate(generics.CreateAPIView):
     queryset = Land.objects.all()
